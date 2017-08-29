@@ -1,5 +1,23 @@
-1.
+#1.
 #runs quality control report with FastQC
-/Users/cmdb/data/rawdata/fastqc SRR072893.fastq
+$ fastqc /Users/cmdb/data/rawdata/SRR072893.fastq
 #following production of report, review
-open /Users/cmdb/data/rawdata/fastqc SRR072893.fastq.html
+$ open /Users/cmdb/data/rawdata/SRR072893.fastq.html
+ 
+ 
+#2.
+#Map reads to BDGP6 using HISAT2
+$ hisat2 -p 4 -x /Users/cmdb/data/genomes/BDGP6 -U /Users/cmdb/data/rawdata/SRR072893.fastq -S BDGP6.sam
+
+#3.
+# converting .sam file to .bam file that is sorted and then index
+# /Users/cmdb/data/genomes 
+$ samtools view BDGP6.sam -b -o BDGP6.bam -@ 4
+$ samtools sort BDGP6.bam -o BDGP6_sorted.bam
+$ samtools index -b BDGP6_sorted.bam 
+
+#4.
+# quantitate with Stringtie
+# stringtie <aligned_reads.bam> [options]*
+# /Users/cmdb/data/genomes 
+$ stringtie BDGP6_sorted.bam -p 4 -e -G /Users/cmdb/data/genomes/BDGP6.Ensembl.81.gtf -o /Users/cmdb/data/genomes/SRR072893_BDGP6.gtf -B
