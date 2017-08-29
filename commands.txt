@@ -15,3 +15,9 @@ $ hisat2 -p 4 -x /Users/cmdb/data/genomes/BDGP6 -U /Users/cmdb/data/rawdata/SRR0
 $ samtools view BDGP6.sam -b -o BDGP6.bam -@ 4
 $ samtools sort BDGP6.bam -o BDGP6_sorted.bam
 $ samtools index -b BDGP6_sorted.bam 
+
+#4.
+# quantitate with Stringtie
+# stringtie <aligned_reads.bam> [options]*
+# /Users/cmdb/data/genomes 
+$ stringtie BDGP6_sorted.bam -p 4 -e -G /Users/cmdb/data/genomes/BDGP6.Ensembl.81.gtf -o /Users/cmdb/data/genomes/SRR072893_BDGP6.gtf -B
