@@ -1,0 +1,5 @@
+1.
+#runs quality control report with FastQC
+/Users/cmdb/data/rawdata/fastqc SRR072893.fastq
+#following production of report, review
+open /Users/cmdb/data/rawdata/fastqc SRR072893.fastq.html
