@@ -8,3 +8,10 @@ $ open /Users/cmdb/data/rawdata/SRR072893.fastq.html
 #2.
 #Map reads to BDGP6 using HISAT2
 $ hisat2 -p 4 -x /Users/cmdb/data/genomes/BDGP6 -U /Users/cmdb/data/rawdata/SRR072893.fastq -S BDGP6.sam
+
+#3.
+# converting .sam file to .bam file that is sorted and then index
+# /Users/cmdb/data/genomes 
+$ samtools view BDGP6.sam -b -o BDGP6.bam -@ 4
+$ samtools sort BDGP6.bam -o BDGP6_sorted.bam
+$ samtools index -b BDGP6_sorted.bam 
