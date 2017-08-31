@@ -4,7 +4,6 @@ import sys
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
-from scipy.optimize import curve_fit
 
 """
 Usage: ./day4-lunch.py <ctab1> <ctab2> <outplot>
@@ -33,7 +32,7 @@ y = np.log(df2["FPKM"] + 1)
 
 plt.figure()
 plt.scatter(x, y, alpha = 0.1)
-#plt.plot(poly)
+plt.plot(np.unique(x), np.poly1d(np.polyfit(x,y, deg = 2))(np.unique(x)))
 plt.axis([0,10,0,10])
 plt.xlabel("SRR072893")
 plt.ylabel("SRR072915")
