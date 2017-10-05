@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 """
-/Users/cmdb/qbb2017-answers/Week4 $ plink2 --pca 2 tabs header --vcf BYxRM_segs_saccer3.bam.simplified.vcf --allow-extra-chr --mind
+/Users/cmdb/qbb2017-answers/Week4 $ plink2 --pca 2 tabs header --freq --vcf BYxRM_segs_saccer3.bam.simplified.vcf --allow-extra-chr --mind
 
 Usage:
 ./Week4.py plink.eigenvec PCA1_PCA2
