@@ -3,13 +3,31 @@
 """
 Write a python script to compute the number of contigs, minimum/maximum/average contig length, and N50. (Remember, you already have a FASTA parser from Bootcamp).
 
-each entry in contigs.fa has length in header line
-eg)
->NODE_8_length_148_cov_1.500000
-
 
 Parse a single FASTA record from stdin and print it.
-usage: ./fastaparse_wk2.py reads_low_1_kmer.fastq/contigs.fa > output
+usage: ./fastaparse_wk2.py <contiginput>
+
+Short Read:
+velvetoutput/contigs.fa
+Minimum contig length: 61 Maximum contig length: 998 Average contig length: 186
+The N50 is 248
+
+SPAdeslow/contigs.fasta
+Minimum contig length: 207 Maximum contig length: 1409 Average contig length: 379
+The N50 is 372
+
+SPAdes_long/contigs.fasta - long read
+Minimum contig length: 207 Maximum contig length: 6731 Average contig length: 1096
+The N50 is 2673
+
+Better coverage:
+velvetbc/contigs/fa
+Minimum contig length: 61 Maximum contig length: 33235 Average contig length: 9096
+The N50 is 19911
+
+SPAdesBC/contigs.fasta
+Minimum contig length: 111 Maximum contig length: 99915 Average contig length: 50013
+The N50 is 99915
 """
 
 import sys

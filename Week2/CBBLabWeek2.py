@@ -2,6 +2,7 @@
 
 
 """
+Short Reads:
 reads_low_1.fastq
 reads_low_2.fastq
 
@@ -40,11 +41,29 @@ user	0m0.093s
 sys	0m0.025s
 
 SPAdes
-$ time spades.py --12 reads_low_1.fastq --12 reads_low_2.fastq -o SPAdes
+$ time spades.py --12 reads_low_1.fastq --12 reads_low_2.fastq -o SPAdeslow
 real	0m3.990s
 user	0m4.118s
 sys	0m1.199s
+
+Long Read Assembly with Oxford Nanopore
+$ spades.py --nanopore MAP006.subset.fa --12 reads_low_1.fastq --12 reads_low_2.fastq -o /Users/cmdb/qbb2017-answers/Week2/SPAdes_long
+
+Better Coverage:
+reads_1.fastq 
+reads_2.fastq
+Velvet --
+$ velveth velvetbc 31 -fastq reads_1.fastq reads_2.fastq -short
+$ velvetg velvetbc
+Final graph has 42 nodes and n50 of 19881, max 33205, total 100102, using 0/612348 reads
+
+$ spades.py --12 reads_1.fastq --12 reads_2.fastq -o SPAdesBC
+
 """
 
+"""
+$ python /usr/local/bin/quast velvetoutput/contigs.fa SPAdeslow/contigs.fasta SPAdes_long/contigs.fasta velvetbc/contigs.fa SPAdesBC/contigs.fasta
 
+Based on the report that was generated, the SPAdes better coverage assembly performed best.
+"""
 
