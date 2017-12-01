@@ -55,13 +55,14 @@ for thing in taxoncounts:
 """
     To produce KronaTools charts
     
-ktImportText SRR492183_Summary -o SRR492183_Summary
-ktImportText SRR492186_Summary -o SRR492186_Summary
-ktImportText SRR492188_Summary -o SRR492188_Summary
-ktImportText SRR492189_Summary -o SRR492189_Summary
-ktImportText SRR492190_Summary -o SRR492190_Summary
-ktImportText SRR492193_Summary -o SRR492193_Summary
-ktImportText SRR492194_Summary -o SRR492194_Summary
-ktImportText SRR492197_Summary -o SRR492197_Summary
+ktImportText SRR492183_Summary -o SRR492183_Summary.html
+ktImportText SRR492186_Summary -o SRR492186_Summary.html
+ktImportText SRR492188_Summary -o SRR492188_Summary.html
+ktImportText SRR492189_Summary -o SRR492189_Summary.html
+ktImportText SRR492190_Summary -o SRR492190_Summary.html
+ktImportText SRR492193_Summary -o SRR492193_Summary.html
+ktImportText SRR492194_Summary -o SRR492194_Summary.html
+ktImportText SRR492197_Summary -o SRR492197_Summary.html
     
+
 """
